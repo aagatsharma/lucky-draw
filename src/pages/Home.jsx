@@ -50,8 +50,8 @@ function Home() {
           <div>
             <h1 className="text-5xl font-bold">Company Rules/News</h1>
             {/* Card */}
-            <div className="md:grid md:grid-cols-2 xl:grid-cols-3 gap-5 space-y-5 mt-10">
-              <div className="card w-96 bg-base-100 shadow-xl">
+            <div className="md:grid md:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
+              <div className="card w-96 bg-base-100 shadow-xl mt-5">
                 <figure>
                   <img
                     src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -64,7 +64,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card w-96 bg-base-100 shadow-xl mt-5">
                 <figure>
                   <img
                     src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
@@ -77,7 +77,7 @@ function Home() {
                 </div>
               </div>
 
-              <div className="card w-96 bg-base-100 shadow-xl">
+              <div className="card w-96 bg-base-100 shadow-xl mt-5">
                 <figure>
                   <img
                     src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"

@@ -5,6 +5,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import BuyNow from "./pages/BuyNow";
+import ForgetPassword from "./pages/ForgetPassword";
 
 const router = createBrowserRouter([
   {
@@ -23,13 +24,19 @@ const router = createBrowserRouter([
     path: "/buy-now",
     element: <BuyNow />,
   },
+  {
+    path: "/forget-password",
+    element: <ForgetPassword />,
+  },
 ]);
 
 function App() {
   return (
     <div>
       <Navbar />
-      <RouterProvider router={router} />
+      <main className="mt-10">
+        <RouterProvider router={router} />
+      </main>
       <Footer />
     </div>
   );

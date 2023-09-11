@@ -1,27 +1,36 @@
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 function Home() {
   return (
-    <div>
+    <div className=" mt-20">
       {/* Hero */}
-      <div
-        className="hero min-h-screen"
-        style={{
-          backgroundImage:
-            "url(https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg)",
-        }}
+      <Carousel
+        infiniteLoop
+        autoPlay
+        interval={3000}
+        showArrows
+        showStatus={false}
+        showThumbs={false}
       >
-        <div className="hero-overlay bg-opacity-60"></div>
-        <div className="hero-content text-center text-neutral-content">
-          <div className="max-w-md">
-            <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-            <p className="mb-5">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
-            </p>
-            <button className="btn btn-primary">Get Started</button>
-          </div>
+        <div className="h-full">
+          <img
+            src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
+            className="h-full"
+          />
         </div>
-      </div>
+        <div className="h-full">
+          <img
+            src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+            className="h-full"
+          />
+        </div>
+        <div className="h-full">
+          <img
+            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+            className="h-full"
+          />
+        </div>
+      </Carousel>
 
       {/* About us */}
       <div className="hero py-10 bg-base-200">

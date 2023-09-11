@@ -2,7 +2,7 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
 function Home() {
   return (
-    <div className=" mt-20">
+    <div className="">
       {/* Hero */}
       <Carousel
         infiniteLoop

@@ -84,6 +84,15 @@ function Login() {
                 className="input input-bordered"
                 onChange={(e) => handleChange(e)}
               />
+              <label className="label">
+                <a
+                  href="#"
+                  className="label-text-alt link link-hover"
+                  onClick={() => navigation("/forget-password")}
+                >
+                  Forgot password?
+                </a>
+              </label>
             </div>
             <p className="text-center mt-3">
               {"Don't have an account?  "}

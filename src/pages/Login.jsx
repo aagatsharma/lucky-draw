@@ -37,12 +37,11 @@ function Login() {
         password,
       });
 
-      if (data) {
-        // localStorage.setItem("user-auth", JSON.stringify(data));
+      if (data.user) {
         updateUserData(data);
         navigation("/");
       } else {
-        toast.error("Error", toastOptions);
+        toast.error(data.message, toastOptions);
       }
     }
   };
@@ -82,7 +81,7 @@ function Login() {
                 <span className="label-text">Password</span>
               </label>
               <input
-                type="text"
+                type="password"
                 name="password"
                 placeholder="Enter your password"
                 className="input input-bordered"

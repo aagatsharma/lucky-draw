@@ -11,23 +11,24 @@ function Home() {
         showArrows
         showStatus={false}
         showThumbs={false}
+        stopOnHover={false}
       >
-        <div className="h-full">
+        <div className=" h-full">
           <img
             src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
-            className="h-full"
+            className=" h-full"
           />
         </div>
-        <div className="h-full">
+        <div className=" h-full">
           <img
             src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
-            className="h-full"
+            className=" h-full"
           />
         </div>
-        <div className="h-full">
+        <div className=" h-full">
           <img
             src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
-            className="h-full"
+            className=" h-full"
           />
         </div>
       </Carousel>

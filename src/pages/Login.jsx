@@ -1,9 +1,13 @@
+import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { loginRoute } from "../utils/APIRoutes";
+import { useUser } from "../hooks/useUser";
 
 function Login() {
+  const { updateUserData } = useUser();
   const navigation = useNavigate();
   const [values, setValues] = useState({
     email: "",
@@ -19,7 +23,7 @@ function Login() {
   };
 
   useEffect(() => {
-    if (localStorage.getItem("chat-app-user")) {
+    if (localStorage.getItem("user-auth")) {
       navigation("/");
     }
   }, [navigation]);
@@ -27,19 +31,19 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (handleValidation()) {
-      //   const { password, email } = values;
-      //   const { data } = await axios.post(loginRoute, {
-      //     email,
-      //     password,
-      //   });
-      console.log(values);
-      //   if (data.status === false) {
-      //     toast.error(data.msg, toastOptions);
-      //   }
-      //   if (data.status === true) {
-      //     localStorage.setItem("chat-app-user", JSON.stringify(data.user));
-      //     navigation("/");
-      //   }
+      const { password, email } = values;
+      const { data } = await axios.post(loginRoute, {
+        email,
+        password,
+      });
+
+      if (data) {
+        // localStorage.setItem("user-auth", JSON.stringify(data));
+        updateUserData(data);
+        navigation("/");
+      } else {
+        toast.error("Error", toastOptions);
+      }
     }
   };
 

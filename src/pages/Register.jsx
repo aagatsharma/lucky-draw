@@ -38,12 +38,12 @@ function Register() {
         email,
         password,
       });
-      if (data) {
+      if (data.user) {
         // localStorage.setItem("user-auth", JSON.stringify(data));
         updateUserData(data);
         navigation("/");
       } else {
-        toast.error("Error", toastOptions);
+        toast.error(data.message, toastOptions);
       }
     }
   };

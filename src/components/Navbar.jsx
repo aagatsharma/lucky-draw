@@ -86,11 +86,13 @@ function Navbar() {
       </div>
       <div className="navbar-end gap-3">
         {userData ? (
-          <ul className="menu menu-horizontal px-10">
+          <ul className="menu menu-horizontal mr-16">
             <li tabIndex={0}>
               <details>
-                <summary>Hi, {userData.token.user.username}</summary>
-                <ul className="p-2 mr-10">
+                <summary className="text-center">
+                  Hi, {userData.user.username}
+                </summary>
+                <ul className="p-2">
                   <li>
                     <a>Change password</a>
                   </li>

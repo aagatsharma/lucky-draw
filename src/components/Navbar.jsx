@@ -1,4 +1,7 @@
+import { useUser } from "../hooks/useUser";
+
 function Navbar() {
+  const { userData, logout } = useUser();
   return (
     <div className="navbar bg-base-100 fixed top-0 z-50 ">
       <div className="navbar-start">
@@ -62,19 +65,7 @@ function Navbar() {
           <li>
             <a href="/buy-now">Buy Now</a>
           </li>
-          <li tabIndex={0}>
-            <details>
-              <summary>Help Line</summary>
-              <ul className="p-2">
-                <li>
-                  <a>How to create ID</a>
-                </li>
-                <li>
-                  <a>How to buy</a>
-                </li>
-              </ul>
-            </details>
-          </li>
+
           <li tabIndex={1}>
             <details>
               <summary>Draw</summary>
@@ -94,9 +85,27 @@ function Navbar() {
         </ul>
       </div>
       <div className="navbar-end gap-3">
-        <a className="btn" href="/login">
-          Login/Signup
-        </a>
+        {userData ? (
+          <ul className="menu menu-horizontal px-10">
+            <li tabIndex={0}>
+              <details>
+                <summary>Hi, {userData.token.user.username}</summary>
+                <ul className="p-2 mr-10">
+                  <li>
+                    <a>Change password</a>
+                  </li>
+                  <li>
+                    <a onClick={() => logout()}>Logout</a>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          </ul>
+        ) : (
+          <a className="btn" href="/login">
+            Login/Signup
+          </a>
+        )}
       </div>
     </div>
   );

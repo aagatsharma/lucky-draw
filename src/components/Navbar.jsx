@@ -2,6 +2,10 @@ import { useUser } from "../hooks/useUser";
 
 function Navbar() {
   const { userData, logout } = useUser();
+  function handleLogout() {
+    logout();
+  }
+
   return (
     <div className="navbar bg-base-100 fixed top-0 z-50 ">
       <div className="navbar-start">
@@ -54,6 +58,13 @@ function Navbar() {
             <li>
               <a>Latest News</a>
             </li>
+            {userData && (
+              <li>
+                {userData.user.role === "admin" ? (
+                  <a href="/admin-buynow">Admin</a>
+                ) : null}
+              </li>
+            )}
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl" href="/">
@@ -64,6 +75,20 @@ function Navbar() {
         <ul className="menu menu-horizontal px-1">
           <li>
             <a href="/buy-now">Buy Now</a>
+          </li>
+
+          <li tabIndex={0}>
+            <details>
+              <summary>Help Line</summary>
+              <ul className="p-2">
+                <li>
+                  <a>How to create ID</a>
+                </li>
+                <li>
+                  <a>How to buy</a>
+                </li>
+              </ul>
+            </details>
           </li>
 
           <li tabIndex={1}>
@@ -82,27 +107,41 @@ function Navbar() {
           <li>
             <a>Latest News</a>
           </li>
+          {userData && (
+            <li>
+              {userData.user.role === "admin" ? (
+                <a href="/admin-buynow">Admin</a>
+              ) : null}
+            </li>
+          )}
         </ul>
       </div>
-      <div className="navbar-end gap-3">
+      <div className="navbar-end mr-10">
         {userData ? (
-          <ul className="menu menu-horizontal mr-16">
-            <li tabIndex={0}>
-              <details>
-                <summary className="text-center">
+          <div className="dropdown dropdown-end">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52"
+            >
+              <li>
+                <a className="text-base">
                   Hi, {userData.user.username}
-                </summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Change password</a>
-                  </li>
-                  <li>
-                    <a onClick={() => logout()}>Logout</a>
-                  </li>
-                </ul>
-              </details>
-            </li>
-          </ul>
+                  <span className="badge">{userData.user.role}</span>
+                </a>
+              </li>
+
+              <li>
+                <a href="/login" onClick={handleLogout} className="text-base">
+                  Logout
+                </a>
+              </li>
+            </ul>
+          </div>
         ) : (
           <a className="btn" href="/login">
             Login/Signup

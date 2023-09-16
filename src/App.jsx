@@ -6,6 +6,8 @@ import Register from "./pages/Register";
 import Footer from "./components/Footer";
 import BuyNow from "./pages/BuyNow";
 import ForgetPassword from "./pages/ForgetPassword";
+import AdminBuyNow from "./pages/AdminBuyNow";
+import ResetPassword from "./pages/ResetPassword";
 
 const router = createBrowserRouter([
   {
@@ -29,13 +31,21 @@ const router = createBrowserRouter([
     path: "/forget-password",
     element: <ForgetPassword />,
   },
+  {
+    path: "/admin-buynow",
+    element: <AdminBuyNow />,
+  },
+  {
+    path: "/reset-password",
+    element: <ResetPassword />,
+  },
 ]);
 
 function App() {
   return (
     <div>
       <Navbar />
-      <main className="mt-10">
+      <main className=" mt-20">
         <RouterProvider router={router} />
       </main>
       <Footer />

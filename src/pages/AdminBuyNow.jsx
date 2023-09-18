@@ -3,7 +3,11 @@ import { useNavigate } from "react-router-dom";
 import { useUser } from "../hooks/useUser";
 
 import axios from "axios";
-import { addBookingNumber, getAllBookingRoute } from "../utils/APIRoutes";
+import {
+  addBookingNumber,
+  getAllBookingRoute,
+  updateBookingRoute,
+} from "../utils/APIRoutes";
 import { ToastContainer, toast } from "react-toastify";
 
 function AdminBuyNow() {
@@ -15,6 +19,7 @@ function AdminBuyNow() {
   const [error, setError] = useState(false);
   const [buynowData, setBuyNowData] = useState([]);
   const [page, setPage] = useState(1);
+  const [buttonStatus, setButtonStatus] = useState(false);
 
   const toastOptions = {
     position: "bottom-right",
@@ -66,9 +71,37 @@ function AdminBuyNow() {
         .get(`${getAllBookingRoute}&_page=${page}`)
         .then((data) => setBuyNowData(data.data));
     }
-
     fetchBuyData();
-  }, [navigation, userData, page]);
+    setButtonStatus(false);
+  }, [navigation, userData, page, buttonStatus]);
+
+  async function handleEnable() {
+    if (selectedButtons.length === 0) {
+      toast.error("Select booking numbers", toastOptions);
+    } else {
+      const response = await axios.patch(updateBookingRoute, {
+        ids: selectedButtons,
+        status: "enabled",
+      });
+      setSelectedButtons([]);
+      if (response.data.success) {
+        setButtonStatus(true);
+      }
+    }
+  }
+
+  function handleDisable() {
+    if (selectedButtons.length === 0) {
+      toast.error("Select booking numbers", toastOptions);
+    } else {
+      axios.patch(updateBookingRoute, {
+        ids: selectedButtons,
+        status: "disabled",
+      });
+      setSelectedButtons([]);
+      setButtonStatus(true);
+    }
+  }
 
   return (
     <div className="min-h-screen bg-base-200 py-16">
@@ -89,15 +122,21 @@ function AdminBuyNow() {
             <p className="text-3xl text-center">No more draw left</p>
           )}
           <div className="grid grid-cols-10 max-sm:grid-cols-5 gap-5 px-5">
-            {buynowData.map((booking, index) => (
+            {buynowData.map((booking) => (
               <button
-                key={index}
-                className={`btn btn-circle btn-outline ${
-                  selectedButtons.includes(index)
-                    ? "bg-red-500 text-white border-red-500"
-                    : ""
-                }`}
-                onClick={() => handleButtonClick(index)}
+                key={booking.id}
+                className={`btn btn-circle
+                  ${
+                    selectedButtons.includes(booking.id)
+                      ? "btn-info "
+                      : `${
+                          booking.status === "disabled"
+                            ? "btn-error btn-outline  "
+                            : "  btn-outline"
+                        }`
+                  }
+                `}
+                onClick={() => handleButtonClick(booking.id)}
               >
                 {buynowData.length >= 1 && <p>{booking.BookingNo}</p>}
               </button>
@@ -123,8 +162,12 @@ function AdminBuyNow() {
             )}
           </div>
           <div className="flex justify-center mt-10 gap-10">
-            <a className="btn btn-outline ">Enable</a>
-            <a className="btn btn-outline ">Disable</a>
+            <a className="btn btn-outline " onClick={handleEnable}>
+              Enable
+            </a>
+            <a className="btn btn-outline " onClick={handleDisable}>
+              Disable
+            </a>
           </div>
         </div>
       </div>

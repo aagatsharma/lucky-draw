@@ -11,3 +11,5 @@ export const resetPasswordRequestRoute = `${host}/reset-password-request`;
 export const resetPasswordRoute = `${host}/reset-password`;
 
 export const addBookingNumber = `${host}/api/bookingno`;
+
+export const updateBookingRoute = `${host}/api/updateBookingno`;

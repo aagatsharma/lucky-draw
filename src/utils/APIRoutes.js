@@ -9,3 +9,5 @@ export const getAllBookingRoute = `${host}/api/allbookingno?_limit=100`;
 export const resetPasswordRequestRoute = `${host}/reset-password-request`;
 
 export const resetPasswordRoute = `${host}/reset-password`;
+
+export const addBookingNumber = `${host}/api/bookingno`;

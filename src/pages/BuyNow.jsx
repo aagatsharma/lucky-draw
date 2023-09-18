@@ -10,13 +10,11 @@ function BuyNow() {
   const [buynowData, setBuyNowData] = useState([]);
   const [page, setPage] = useState(1);
 
-  const handleButtonClick = (buttonIndex) => {
-    if (selectedButtons.includes(buttonIndex)) {
-      setSelectedButtons(
-        selectedButtons.filter((index) => index !== buttonIndex)
-      );
+  const handleButtonClick = (buttonId) => {
+    if (selectedButtons.includes(buttonId)) {
+      setSelectedButtons(selectedButtons.filter((id) => id !== buttonId));
     } else {
-      setSelectedButtons([...selectedButtons, buttonIndex]);
+      setSelectedButtons([...selectedButtons, buttonId]);
     }
   };
 
@@ -41,17 +39,23 @@ function BuyNow() {
             <p className="text-3xl text-center">No more draw left</p>
           )}
           <div className="grid grid-cols-10 max-sm:grid-cols-5 gap-5 px-5">
-            {buynowData.map((booking, index) => (
+            {buynowData.map((data) => (
               <button
-                key={index}
-                className={`btn btn-circle btn-outline ${
-                  selectedButtons.includes(index)
-                    ? "bg-red-500 text-white border-red-500"
-                    : ""
-                }`}
-                onClick={() => handleButtonClick(index)}
+                key={data.id}
+                className={`btn btn-circle btn-outline
+                ${
+                  data.status === "disabled"
+                    ? "btn-disabled text-white"
+                    : `${
+                        selectedButtons.includes(data.id)
+                          ? "bg-red-500 text-white border-red-500"
+                          : ""
+                      }`
+                }
+                `}
+                onClick={() => handleButtonClick(data.id)}
               >
-                {buynowData.length >= 1 && <p>{booking.BookingNo}</p>}
+                {buynowData.length >= 1 && <p>{data.BookingNo}</p>}
               </button>
             ))}
           </div>

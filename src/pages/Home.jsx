@@ -39,16 +39,15 @@ function Home() {
           <div>
             <h1 className="text-5xl font-bold">About Us</h1>
             <p className="py-6 text-xl">
-              Lucky-draw is the Nepalese favourite weekly draw with the most
-              frequent and highest pay-out, offers participants a life-changing
-              opportunity to win millions of dirhams and access the good life,
-              every week, wherever they are around the globe. In line with its
-              mission to create a positive change in the society, Lucky-draw has
-              awarded millions of dirhams to thousands of winners since its
-              debut in 2023 and has touched the lives of around 10,000
-              beneficiaries through its active community outreach program,
-              carried out in partnership with official NGOs and not-for-profit
-              organizations.
+              Nozza नेपाल को सबै भन्दा मनपर्ने सेल्स अनि Lucky Draws हुनेछ। र
+              यसमा सहभागिता भाग्यमानी ब्यक्ति १ जना करोड पनि र ५ जना लाख पति बन
+              पाउनेछन र जीवन परिवर्तन गर्ने अबसर प्रदान गर्नेछन। समाजमा
+              सकारात्मक परिवर्तन ल्याउने आफ्नो मिसनका साथ Nozza ले २०२३ देखि
+              लिएको ले र यस्को result प्रत्येक बर्षको जेष्ठ १ गते प्रकाशित गरिने
+              छ result गर्दा सबै सहभागी देख्ने गरि live द्वारा गरिनेछ । र त्यसमा
+              कसैको हात हुने छैन Digital system ले जस्लाई select गर्‍यो त्यही
+              बिजेता हुनेछ भने Government लाई तिर्नु पर्ने Tax स्वयम बिजेता
+              आफैले तिर्नु पर्नेछ ।
             </p>
           </div>
         </div>

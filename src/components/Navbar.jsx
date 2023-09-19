@@ -68,7 +68,7 @@ function Navbar() {
           </ul>
         </div>
         <a className="btn btn-ghost normal-case text-xl" href="/">
-          Lucky Draw
+          Nozza
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">

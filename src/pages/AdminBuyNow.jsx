@@ -90,16 +90,18 @@ function AdminBuyNow() {
     }
   }
 
-  function handleDisable() {
+  async function handleDisable() {
     if (selectedButtons.length === 0) {
       toast.error("Select booking numbers", toastOptions);
     } else {
-      axios.patch(updateBookingRoute, {
+      const response = await axios.patch(updateBookingRoute, {
         ids: selectedButtons,
         status: "disabled",
       });
       setSelectedButtons([]);
-      setButtonStatus(true);
+      if (response.data.success) {
+        setButtonStatus(true);
+      }
     }
   }
 

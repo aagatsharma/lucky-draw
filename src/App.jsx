@@ -8,11 +8,16 @@ import BuyNow from "./pages/BuyNow";
 import ForgetPassword from "./pages/ForgetPassword";
 import AdminBuyNow from "./pages/AdminBuyNow";
 import ResetPassword from "./pages/ResetPassword";
+import Video from "./pages/Video";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/video",
+    element: <Video />,
   },
   {
     path: "/login",

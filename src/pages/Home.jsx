@@ -32,7 +32,20 @@ function Home() {
           />
         </div>
       </Carousel>
+{/* legal */}
+<>
+  {/* component */}
+  <div className="h-24 m-3 text-white  text-center grid bg-cover ">
+    <div className="col-start-1  row-start-1 bg-[#27a9ff] rounded-xl bg-opacity-70 w-full h-full" >
+    <div className="col-start-1 row-start-1 flex content-center items-center flex-col mx-auto my-auto">
+      {/* <h1><BsFillPenFill className="text-red-900 mt-2 h-8 w-8 animate-bounce "></BsFillPenFill></h1> */}
+      <h1 className="font-bold text-2xl">Hero Message</h1>
+      <p>Something interesting about hero message</p>
+    </div>
+  </div>
+  </div>
 
+</>
       {/* About us */}
       <div className="hero py-10 bg-base-200">
         <div className="hero-content text-center">

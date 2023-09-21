@@ -37,7 +37,7 @@ function Navbar() {
               <a>Help Line</a>
               <ul className="p-2">
                 <li>
-                <a href="/video">How to Create ID</a>
+                  <a href="/video">How to Create ID</a>
                 </li>
                 <li>
                   <a>How to buy</a>
@@ -60,8 +60,17 @@ function Navbar() {
             </li>
             {userData && (
               <li>
+                <a>Admin</a>
+
                 {userData.user.role === "admin" ? (
-                  <a href="/admin-buynow">Admin</a>
+                  <ul className="p-2">
+                    <li>
+                      <a href="/admin-buynow">Admin Buy Now</a>
+                    </li>
+                    <li>
+                      <a href="/admin-userstatus">Admin User status</a>
+                    </li>
+                  </ul>
                 ) : null}
               </li>
             )}
@@ -76,13 +85,12 @@ function Navbar() {
           <li>
             <a href="/buy-now">Buy Now</a>
           </li>
-
           <li tabIndex={0}>
             <details>
               <summary>Help Line</summary>
               <ul className="p-2">
                 <li>
-                <a href="/video">How To create ID</a>
+                  <a href="/video">How To create ID</a>
                 </li>
                 <li>
                   <a>How to buy</a>
@@ -90,7 +98,6 @@ function Navbar() {
               </ul>
             </details>
           </li>
-
           <li tabIndex={1}>
             <details>
               <summary>Draw</summary>
@@ -102,16 +109,35 @@ function Navbar() {
             </details>
           </li>
           <li>
-            <a>Laegal</a>
+            <a>Legal</a>
           </li>
           <li>
             <a>Latest News</a>
           </li>
+          {/* {/* {userData && ( */}
+          {/* <li>
+            {userData.user.role === "admin" ? (
+              <a href="/admin-buynow">Admin</a>
+            ) : null}
+          </li>
+          )} */}
+
           {userData && (
-            <li>
-              {userData.user.role === "admin" ? (
-                <a href="/admin-buynow">Admin</a>
-              ) : null}
+            <li tabIndex={2}>
+              <details>
+                <summary>Admin</summary>
+
+                {userData.user.role === "admin" ? (
+                  <ul className="p-2">
+                    <li>
+                      <a href="/admin-buynow">Admin Buy Now</a>
+                    </li>
+                    <li>
+                      <a href="/admin-userstatus">Admin User status</a>
+                    </li>
+                  </ul>
+                ) : null}
+              </details>
             </li>
           )}
         </ul>

@@ -19,7 +19,7 @@ function BuyNow() {
       setSelectedButtons([...selectedButtons, buttonId]);
     }
   };
-  console.log(selectedButtons);
+
   const toastOptions = {
     position: "bottom-right",
     autoClose: 8000,

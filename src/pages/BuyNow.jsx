@@ -3,6 +3,8 @@ import Modal from "../components/Modal";
 import { useUser } from "../hooks/useUser";
 import axios from "axios";
 import { getAllBookingRoute } from "../utils/APIRoutes";
+import { ToastContainer, toast } from "react-toastify";
+import PayModal from "../components/PayModal";
 
 function BuyNow() {
   const [selectedButtons, setSelectedButtons] = useState([]);
@@ -17,6 +19,14 @@ function BuyNow() {
       setSelectedButtons([...selectedButtons, buttonId]);
     }
   };
+  console.log(selectedButtons);
+  const toastOptions = {
+    position: "bottom-right",
+    autoClose: 8000,
+    pauseOnHover: true,
+    draggable: true,
+    theme: "light",
+  };
 
   useEffect(() => {
     async function fetchBuyData() {
@@ -30,6 +40,18 @@ function BuyNow() {
   if (buynowData === undefined) {
     return <p>Loading...</p>;
   }
+
+  function handleUserModal() {
+    if (selectedButtons.length >= 1) {
+      if (userData) {
+        document.getElementById("my_modal_2").showModal();
+      } else {
+        document.getElementById("my_modal_1").showModal();
+      }
+    } else {
+      toast.error("At least select 1 booking", toastOptions);
+    }
+  }
   return (
     <div className="min-h-screen bg-base-200 py-16">
       <div>
@@ -41,19 +63,19 @@ function BuyNow() {
           <div className="grid grid-cols-10 max-sm:grid-cols-5 gap-5 px-5">
             {buynowData.map((data) => (
               <button
-                key={data.id}
+                key={data.BookingNo}
                 className={`btn btn-circle btn-outline
                 ${
                   data.status === "disabled"
                     ? "btn-disabled text-white"
                     : `${
-                        selectedButtons.includes(data.id)
+                        selectedButtons.includes(data.BookingNo)
                           ? "bg-red-500 text-white border-red-500"
                           : ""
                       }`
                 }
                 `}
-                onClick={() => handleButtonClick(data.id)}
+                onClick={() => handleButtonClick(data.BookingNo)}
               >
                 {buynowData.length >= 1 && <p>{data.BookingNo}</p>}
               </button>
@@ -79,13 +101,21 @@ function BuyNow() {
             )}
           </div>
           <div className="flex justify-center mt-10">
-            <a href="#my_modal_8" className="btn btn-outline ">
+            <button className="btn btn-outline" onClick={handleUserModal}>
               Buy Now
-            </a>
-            {!userData && <Modal />}
+            </button>
+
+            <dialog id="my_modal_1" className="modal">
+              <Modal />
+            </dialog>
+
+            <dialog id="my_modal_2" className="modal">
+              <PayModal selectedButtons={selectedButtons} />
+            </dialog>
           </div>
         </div>
       </div>
+      <ToastContainer />
     </div>
   );
 }

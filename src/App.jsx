@@ -9,6 +9,7 @@ import ForgetPassword from "./pages/ForgetPassword";
 import AdminBuyNow from "./pages/AdminBuyNow";
 import ResetPassword from "./pages/ResetPassword";
 import Video from "./pages/Video";
+import AdminUserStatus from "./pages/AdminUserStatus";
 
 const router = createBrowserRouter([
   {
@@ -42,6 +43,10 @@ const router = createBrowserRouter([
   {
     path: "/reset-password",
     element: <ResetPassword />,
+  },
+  {
+    path: "/admin-userstatus",
+    element: <AdminUserStatus />,
   },
 ]);
 

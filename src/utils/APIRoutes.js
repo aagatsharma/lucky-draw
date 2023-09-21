@@ -15,3 +15,5 @@ export const addBookingNumber = `${host}/api/bookingno`;
 export const updateBookingRoute = `${host}/api/updateBookingno`;
 
 export const userBookingRoute = `${host}/api/booking`;
+
+export const allBookingRoute = `${host}/api/allbooking`;

@@ -37,7 +37,7 @@ function Navbar() {
               <a>Help Line</a>
               <ul className="p-2">
                 <li>
-                  <a>How to create ID</a>
+                <a href="/video">How to Create ID</a>
                 </li>
                 <li>
                   <a>How to buy</a>
@@ -48,12 +48,12 @@ function Navbar() {
               <a>Draw</a>
               <ul className="p-2">
                 <li>
-                  <a>Live Stream</a>
-                </li>
-                <li>
                   <a>Past Draw Shows</a>
                 </li>
               </ul>
+            </li>
+            <li>
+              <a>Legal </a>
             </li>
             <li>
               <a>Latest News</a>
@@ -82,7 +82,7 @@ function Navbar() {
               <summary>Help Line</summary>
               <ul className="p-2">
                 <li>
-                  <a>How to create ID</a>
+                <a href="/video">How To create ID</a>
                 </li>
                 <li>
                   <a>How to buy</a>
@@ -96,13 +96,13 @@ function Navbar() {
               <summary>Draw</summary>
               <ul className="p-2">
                 <li>
-                  <a>Live Stream</a>
-                </li>
-                <li>
                   <a>Past Draw Shows</a>
                 </li>
               </ul>
             </details>
+          </li>
+          <li>
+            <a>Laegal</a>
           </li>
           <li>
             <a>Latest News</a>

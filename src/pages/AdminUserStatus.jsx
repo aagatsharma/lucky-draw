@@ -32,13 +32,16 @@ export default function AdminUserStatus() {
             {/* row 1 */}
             {userData.map((data, index) => (
               <tr key={index}>
-                <th>{index}</th>
+                <th>{index + 1}</th>
                 <td>{data.name}</td>
-                <td>{data.BookingNo.map((booking) => booking)}</td>
+                <td className="grid grid-cols-4 md:grid-cols-8">
+                  {data.BookingNo.map((booking) => (
+                    <span key={booking}>{booking} </span>
+                  ))}
+                </td>
                 <td>{data.contact}</td>
               </tr>
             ))}
-            {/* <h1 key={index}>{data.name}</h1> */}
 
             {/* row 2 */}
           </tbody>

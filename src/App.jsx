@@ -10,6 +10,7 @@ import AdminBuyNow from "./pages/AdminBuyNow";
 import ResetPassword from "./pages/ResetPassword";
 import Video from "./pages/Video";
 import AdminUserStatus from "./pages/AdminUserStatus";
+import WhatsappFloat from "./components/WhatsappFloat";
 
 const router = createBrowserRouter([
   {
@@ -53,10 +54,12 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div>
+      <WhatsappFloat />
       <Navbar />
       <main className=" mt-20">
         <RouterProvider router={router} />
       </main>
+
       <Footer />
     </div>
   );

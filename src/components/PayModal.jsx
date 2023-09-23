@@ -39,7 +39,7 @@ export default function PayModal({ selectedButtons }) {
     }
   }
   const totalItems = selectedButtons.length;
-  const totalCost = totalItems * 100;
+  const totalCost = totalItems * 500;
   return (
     <>
       <div className="modal-box">

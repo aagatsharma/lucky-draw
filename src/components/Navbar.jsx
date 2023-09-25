@@ -58,20 +58,18 @@ function Navbar() {
             <li>
               <a>Latest News</a>
             </li>
-            {userData && (
+            {userData && userData.user.role === "admin" && (
               <li>
                 <a>Admin</a>
+                <ul className="p-2">
+                  <li>
+                    <a href="/admin-buynow">Admin Buy Now</a>
+                  </li>
+                  <li>
+                    <a href="/admin-userstatus">Admin User status</a>
+                  </li>
+                </ul>
 
-                {userData.user.role === "admin" ? (
-                  <ul className="p-2">
-                    <li>
-                      <a href="/admin-buynow">Admin Buy Now</a>
-                    </li>
-                    <li>
-                      <a href="/admin-userstatus">Admin User status</a>
-                    </li>
-                  </ul>
-                ) : null}
               </li>
             )}
           </ul>
@@ -114,29 +112,19 @@ function Navbar() {
           <li>
             <a>Latest News</a>
           </li>
-          {/* {/* {userData && ( */}
-          {/* <li>
-            {userData.user.role === "admin" ? (
-              <a href="/admin-buynow">Admin</a>
-            ) : null}
-          </li>
-          )} */}
 
-          {userData && (
+          {userData && userData.user.role === "admin" && (
             <li tabIndex={2}>
               <details>
                 <summary>Admin</summary>
-
-                {userData.user.role === "admin" ? (
-                  <ul className="p-2">
-                    <li>
-                      <a href="/admin-buynow">Admin Buy Now</a>
-                    </li>
-                    <li>
-                      <a href="/admin-userstatus">Admin User status</a>
-                    </li>
-                  </ul>
-                ) : null}
+                <ul className="p-2">
+                  <li>
+                    <a href="/admin-buynow">Admin Buy Now</a>
+                  </li>
+                  <li>
+                    <a href="/admin-userstatus">Admin User status</a>
+                  </li>
+                </ul>
               </details>
             </li>
           )}

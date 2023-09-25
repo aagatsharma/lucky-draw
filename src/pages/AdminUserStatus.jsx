@@ -2,18 +2,25 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { allBookingRoute } from "../utils/APIRoutes";
 
+import { useNavigate } from "react-router-dom";
+import { useUser } from "../hooks/useUser";
+
 export default function AdminUserStatus() {
-  const [userData, setUserData] = useState();
+  const navigation = useNavigate();
+  const { userData } = useUser();
+  const [usersTableData, setUsersTableData] = useState([]);
   useEffect(() => {
+    if (userData && userData.user.role === "user") {
+      navigation("/");
+    }
     async function getdata() {
-      await axios.get(allBookingRoute).then((res) => setUserData(res.data));
+      await axios
+        .get(allBookingRoute)
+        .then((res) => setUsersTableData(res.data));
     }
     getdata();
-  }, []);
-  console.log(userData);
-  if (userData === undefined) {
-    return <p>Loading.....</p>;
-  }
+  }, [navigation, userData]);
+
 
   return (
     <div className="min-h-screen pt-10">
@@ -30,7 +37,8 @@ export default function AdminUserStatus() {
           </thead>
           <tbody>
             {/* row 1 */}
-            {userData.map((data, index) => (
+            {usersTableData.map((data, index) => (
+
               <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{data.name}</td>

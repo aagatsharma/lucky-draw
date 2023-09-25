@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { allBookingRoute } from "../utils/APIRoutes";
+
 import { useNavigate } from "react-router-dom";
 import { useUser } from "../hooks/useUser";
 
@@ -20,6 +21,7 @@ export default function AdminUserStatus() {
     getdata();
   }, [navigation, userData]);
 
+
   return (
     <div className="min-h-screen pt-10">
       <div className="overflow-x-auto">
@@ -36,6 +38,7 @@ export default function AdminUserStatus() {
           <tbody>
             {/* row 1 */}
             {usersTableData.map((data, index) => (
+
               <tr key={index}>
                 <th>{index + 1}</th>
                 <td>{data.name}</td>

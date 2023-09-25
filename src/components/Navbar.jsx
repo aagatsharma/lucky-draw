@@ -69,6 +69,7 @@ function Navbar() {
                     <a href="/admin-userstatus">Admin User status</a>
                   </li>
                 </ul>
+
               </li>
             )}
           </ul>
@@ -116,7 +117,6 @@ function Navbar() {
             <li tabIndex={2}>
               <details>
                 <summary>Admin</summary>
-
                 <ul className="p-2">
                   <li>
                     <a href="/admin-buynow">Admin Buy Now</a>

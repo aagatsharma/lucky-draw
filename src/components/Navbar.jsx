@@ -37,7 +37,7 @@ function Navbar() {
               <a>Help Line</a>
               <ul className="p-2">
                 <li>
-                  <a href="/video">How to Create ID</a>
+                  <a href="/how-to-create-id">How to Create ID</a>
                 </li>
                 <li>
                   <a>How to buy</a>
@@ -90,7 +90,7 @@ function Navbar() {
               <summary>Help Line</summary>
               <ul className="p-2">
                 <li>
-                  <a href="/video">How To create ID</a>
+                  <a href="/how-to-create-id">How To create ID</a>
                 </li>
                 <li>
                   <a>How to buy</a>

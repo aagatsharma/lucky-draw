@@ -9,17 +9,17 @@ function Home() {
       <Carousel
         infiniteLoop
         autoPlay
-        interval={3000}
+        interval={5000}
         showArrows
         showStatus={false}
         showThumbs={false}
         stopOnHover={false}
       >
-        <div className=" h-[700px]">
-          <img src={`${img1}`} className=" h-full bg-cover" />
+        <div className=" h-screen">
+          <img src={`${img1}`} className=" h-full object-fill" />
         </div>
-        <div className=" h-[700px]">
-          <img src={`${img2}`} className=" h-full" />
+        <div className=" h-screen">
+          <img src={`${img2}`} className=" h-full object-fill" />
         </div>
       </Carousel>
       {/* legal */}

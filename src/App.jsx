@@ -18,7 +18,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/video",
+    path: "/how-to-create-id",
     element: <Video />,
   },
   {
@@ -56,7 +56,7 @@ function App() {
     <div>
       <WhatsappFloat />
       <Navbar />
-      <main className=" mt-20">
+      <main className="mt-5">
         <RouterProvider router={router} />
       </main>
       <Footer />

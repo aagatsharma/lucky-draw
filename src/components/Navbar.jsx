@@ -69,12 +69,14 @@ function Navbar() {
                     <a href="/admin-userstatus">Admin User status</a>
                   </li>
                 </ul>
-
               </li>
             )}
           </ul>
         </div>
-        <a className="btn btn-ghost normal-case text-xl" href="/">
+        <a
+          className="btn btn-ghost h-2 font-bold text-xl bg-yellow-300"
+          href="/"
+        >
           Nozza
         </a>
       </div>
@@ -157,7 +159,7 @@ function Navbar() {
             </ul>
           </div>
         ) : (
-          <a className="btn" href="/login">
+          <a className="btn font-bold" href="/login">
             Login/Signup
           </a>
         )}

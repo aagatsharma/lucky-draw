@@ -59,7 +59,6 @@ function App() {
       <main className=" mt-20">
         <RouterProvider router={router} />
       </main>
-
       <Footer />
     </div>
   );

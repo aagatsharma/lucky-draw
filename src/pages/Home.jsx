@@ -1,5 +1,7 @@
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // Import carousel styles
+import img1 from "../assets/1.jpg";
+import img2 from "../assets/2.jpg";
 function Home() {
   return (
     <div className="">
@@ -13,105 +15,48 @@ function Home() {
         showThumbs={false}
         stopOnHover={false}
       >
-        <div className=" h-full">
-          <img
-            src="https://daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.jpg"
-            className=" h-full"
-          />
+        <div className=" h-[700px]">
+          <img src={`${img1}`} className=" h-full bg-cover" />
         </div>
-        <div className=" h-full">
-          <img
-            src="https://daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
-            className=" h-full"
-          />
-        </div>
-        <div className=" h-full">
-          <img
-            src="https://daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
-            className=" h-full"
-          />
+        <div className=" h-[700px]">
+          <img src={`${img2}`} className=" h-full" />
         </div>
       </Carousel>
-{/* legal */}
-<>
-  {/* component */}
-  <div className="h-24 m-3 text-white  text-center grid bg-cover ">
-    <div className="col-start-1  row-start-1 bg-[#27a9ff] rounded-xl bg-opacity-70 w-full h-full" >
-    <div className="col-start-1 row-start-1 flex content-center items-center flex-col mx-auto my-auto">
-      {/* <h1><BsFillPenFill className="text-red-900 mt-2 h-8 w-8 animate-bounce "></BsFillPenFill></h1> */}
-      <h1 className="font-bold text-2xl">Hero Message</h1>
-      <p>Something interesting about hero message</p>
-    </div>
-  </div>
-  </div>
-
-</>
+      {/* legal */}
+      <>
+        {/* component */}
+        <div className="h-24 m-3 text-white   text-center bg-cover ">
+          <div className=" bg-[#27a9ff] flex justify-center items-center rounded-xl bg-opacity-70 w-full h-full">
+            <h1 className="font-bold ">
+              यो Number को आधारमा हुने भएको ले एक जना ब्यक्तिले जति वटा पनि लिन
+              सक्नु हुनेछ ।
+            </h1>
+          </div>
+        </div>
+      </>
       {/* About us */}
       <div className="hero py-10 bg-base-200">
         <div className="hero-content text-center">
           <div>
             <h1 className="text-5xl font-bold">About Us</h1>
             <p className="py-6 text-xl">
-              Nozza नेपाल को सबै भन्दा मनपर्ने सेल्स अनि Lucky Draws हुनेछ। र
-              यसमा सहभागिता भाग्यमानी ब्यक्ति १ जना करोड पनि र ५ जना लाख पति बन
-              पाउनेछन र जीवन परिवर्तन गर्ने अबसर प्रदान गर्नेछन। समाजमा
-              सकारात्मक परिवर्तन ल्याउने आफ्नो मिसनका साथ Nozza ले २०२३ देखि
-              लिएको ले र यस्को result प्रत्येक बर्षको जेष्ठ १ गते प्रकाशित गरिने
-              छ result गर्दा सबै सहभागी देख्ने गरि live द्वारा गरिनेछ । र त्यसमा
-              कसैको हात हुने छैन Digital system ले जस्लाई select गर्‍यो त्यही
-              बिजेता हुनेछ भने Government लाई तिर्नु पर्ने Tax स्वयम बिजेता
-              आफैले तिर्नु पर्नेछ ।
+              Nozza नेपालको सबै भन्दा मनपर्ने Nozza सेल्स एन्ड लक्की द्र हुनेछ ।
+              र यसमा सहभागीता लिने भाग्यमानी ब्यक्ति १ जना करोड पनि र ५ जना लख
+              पति बन्ने अबसर पाउनेछन र जीवन परिवर्तन गर्ने अबसर प्रदान गर्नेछन ।
+              समाजमा सकारात्मक परिवर्तन ल्याउने आफ्नो मिसनका साथ Nozza ले २०८०
+              देखि लिएको र यस्को result प्रत्येक बर्षको कार्तिक २० गते प्रकाशित
+              गरिने छ। result प्रकाशन गर्दा सबै सहभागीहरुले देख्ने गरि live
+              द्वारा गरिनेछ। र त्यसमा कसैको हात हुने छैन Digital system ले
+              जस्लाई select गर्‍यो त्यही बिजेता हुनेछ भने Government लाई तिर्नु
+              पर्ने Tax स्वयम बिजेता आफैले तिर्नु पर्नेछ। अन्य थप जानकारिको लागि
+              तल contact us मा whatsApp Number & TikTok link दिइएको छ सम्पर्क
+              गर्नसक्नुहुनेछ।
             </p>
-          </div>
-        </div>
-      </div>
-
-      {/* Company Rules/News */}
-      <div className="hero bg-base-200">
-        <div className="hero-content text-center">
-          <div>
-            <h1 className="text-5xl font-bold">Company Rules/News</h1>
-            {/* Card */}
-            <div className="md:grid md:grid-cols-2 xl:grid-cols-3 gap-5 mt-10">
-              <div className="card bg-base-100 shadow-xl mt-5">
-                <figure>
-                  <img
-                    src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                    alt="Shoes"
-                  />
-                </figure>
-                <div className=" card-body items-center text-center">
-                  <h2 className="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                </div>
-              </div>
-
-              <div className="card bg-base-100 shadow-xl mt-5">
-                <figure>
-                  <img
-                    src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                    alt="Shoes"
-                  />
-                </figure>
-                <div className=" card-body items-center text-center">
-                  <h2 className="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                </div>
-              </div>
-
-              <div className="card  bg-base-100 shadow-xl mt-5">
-                <figure>
-                  <img
-                    src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-                    alt="Shoes"
-                  />
-                </figure>
-                <div className=" card-body items-center text-center">
-                  <h2 className="card-title">Shoes!</h2>
-                  <p>If a dog chews shoes whose shoes does he choose?</p>
-                </div>
-              </div>
-            </div>
+            <p className="font-bold ">
+              {" "}
+              <span className="text-red-600 font-bold">Note : </span>If the
+              target is not met, the deadline will be extended. Thank you !!.{" "}
+            </p>
           </div>
         </div>
       </div>

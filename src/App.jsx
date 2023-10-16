@@ -56,7 +56,7 @@ function App() {
     <div>
       <WhatsappFloat />
       <Navbar />
-      <main className="mt-5">
+      <main className="mt-12">
         <RouterProvider router={router} />
       </main>
       <Footer />

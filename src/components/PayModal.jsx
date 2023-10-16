@@ -29,7 +29,7 @@ export default function PayModal({ selectedButtons }) {
 
       if (data) {
         toast.success(
-          "We'll inform you on whatsapp or contact us on 9820238776",
+          "We'll inform you on whatsapp (+9779766318425) or contact us on 9820238776",
           toastOptions
         );
         showDisableButton(true);
@@ -66,7 +66,9 @@ export default function PayModal({ selectedButtons }) {
               required
             />
           </div>
-          <img src="/QR.jpg" className=" h-full mt-5" />
+          <div className="flex justify-center">
+            <img src="/qr.png" className=" mt-5 h-60 w-auto" />
+          </div>
           <h1 className="mt-5 font-bold">Your selected draws: </h1>
           <div className="grid grid-cols-10">
             {selectedButtons.map((item, index) => (

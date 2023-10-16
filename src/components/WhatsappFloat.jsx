@@ -1,8 +1,8 @@
 import { BsWhatsapp } from "react-icons/bs";
 
 export default function WhatsappFloat() {
-  const phoneNumber = "+9779840564988";
-  const message = "Hello world";
+  const phoneNumber = "+9779766318425";
+  const message = "Hi, can you tell me more about the site.";
   return (
     <a
       href={`https://wa.me/${phoneNumber}?text=${message}`}

@@ -10,6 +10,7 @@ function Register() {
   const [values, setValues] = useState({
     email: "",
   });
+  const [disablebtn, setDisableBtn] = useState(false);
 
   const toastOptions = {
     position: "bottom-right",
@@ -28,6 +29,7 @@ function Register() {
     e.preventDefault();
     if (handleValidation()) {
       toast.success("Check your mail to reset password!", toastOptions);
+      setDisableBtn(true);
       const { email } = values;
       await axios.post(resetPasswordRequestRoute, {
         email,
@@ -68,7 +70,11 @@ function Register() {
             </div>
 
             <div className="form-control mt-6">
-              <button className="btn btn-primary">Reset</button>
+              <button
+                className={`btn btn-primary ${disablebtn && "btn-disabled"}`}
+              >
+                Reset
+              </button>
             </div>
           </form>
         </div>

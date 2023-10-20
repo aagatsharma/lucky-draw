@@ -2,7 +2,11 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        mobile: { max: "767px" },
+      },
+    },
   },
   // eslint-disable-next-line no-undef
   plugins: [require("daisyui")],

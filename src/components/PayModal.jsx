@@ -67,7 +67,7 @@ export default function PayModal({ selectedButtons }) {
             />
           </div>
           <div className="flex justify-center">
-            <img src="/qr.png" className=" mt-5 h-60 w-auto" />
+            <img src="/qr.jpg" className=" mt-5 h-96 " />
           </div>
           <h1 className="mt-5 font-bold">Your selected draws: </h1>
           <div className="grid grid-cols-10">

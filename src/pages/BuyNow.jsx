@@ -60,7 +60,7 @@ function BuyNow() {
           {buynowData.length < 1 && (
             <p className="text-3xl text-center">No more draw left</p>
           )}
-          <div className="grid grid-cols-10 max-sm:grid-cols-5 gap-5 px-5">
+          <div className="grid grid-cols-5 md:grid-cols-10 gap-5 px-5">
             {buynowData.map((data) => (
               <button
                 key={data.BookingNo}

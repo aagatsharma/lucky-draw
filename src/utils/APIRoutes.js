@@ -1,4 +1,4 @@
-const host = "http://localhost:8080";
+const host = "http://backend.nozzaa.com";
 
 export const registerRoute = `${host}/api/auth/signup`;
 
